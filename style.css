@@ -1,0 +1,72 @@
+@theme {
+  --font-pixel: "Press Start 2P", monospace;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+/* Base styles */
+body {
+  min-width: 320px;
+  background: #111827;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.font-pixel {
+  font-family: "Press Start 2P", monospace;
+}
+
+.font-mono {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+textarea:focus-visible,
+input:focus-visible {
+  outline: 3px solid #ffcf70;
+  outline-offset: 3px;
+}
+
+/* Pixel cipher components */
+.pixel-grid {
+  background-image:
+    linear-gradient(rgba(117, 240, 198, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(117, 240, 198, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.pixel-shadow {
+  box-shadow: 8px 8px 0 #75f0c6, 12px 12px 0 #182033;
+}
+
+.pixel-field {
+  border: 3px solid #182033;
+  border-radius: 0;
+  box-shadow: inset 4px 4px 0 rgba(24, 32, 51, 0.12);
+}
+
+.pixel-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 3px solid #182033;
+  padding: 0.8rem 1rem;
+  box-shadow: 4px 4px 0 #182033;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  transition: transform 100ms ease, box-shadow 100ms ease;
+}
+
+.pixel-button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 #182033;
+}
+
+.pixel-button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 #182033;
+}
+

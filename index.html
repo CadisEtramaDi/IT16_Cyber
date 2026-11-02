@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Cipher</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Press+Start+2P&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main
+    class="relative flex min-h-screen flex-col items-center justify-center overflow-x-hidden px-4 py-6 text-[#182033] sm:px-6 sm:py-8">
+    <div class="pixel-grid pointer-events-none fixed inset-0 opacity-30"></div>
+
+    <div class="relative w-full max-w-4xl">
+      <header class="mb-5 flex flex-col justify-between gap-4 sm:mb-6 sm:flex-row sm:items-end">
+        <div>
+          <h1 class="font-pixel text-[clamp(1.5rem,5vw,2.65rem)] leading-tight text-[#FFF9E9]">
+            CIPHER No CIPHER
+          </h1>
+        </div>
+      </header>
+
+      <section class="pixel-shadow border-4 border-[#182033] bg-[#F4EEDC]">
+        <div class="flex items-center justify-between border-b-4 border-[#182033] bg-[#FFCF70] px-4 py-3 sm:px-6">
+          <span class="font-pixel text-[10px] sm:text-xs">CIPHER_CONSOLE.EXE</span>
+          <div class="flex gap-2" aria-hidden="true">
+            <span class="h-3 w-3 border-2 border-[#182033] bg-[#FF6B6B]"></span>
+            <span class="h-3 w-3 border-2 border-[#182033] bg-[#75F0C6]"></span>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-[1fr_15rem]">
+          <div class="space-y-4 p-4 sm:p-5 md:border-r-4 md:border-[#182033]">
+            <div>
+              <div class="mb-2 flex items-end justify-between gap-3">
+                <label for="input-text" class="font-pixel text-[10px]">
+                  01 / INPUT TEXT
+                </label>
+                <span id="char-counter" class="text-[10px] font-bold tracking-widest text-[#5C6476]">
+                  000 CHARS
+                </span>
+              </div>
+              <textarea id="input-text"
+                class="pixel-field min-h-28 w-full resize-y bg-[#FFFCF3] p-3 font-mono text-sm leading-6 outline-none placeholder:text-[#9DA1A8] sm:min-h-32"
+                placeholder="TYPE YOUR SECRET MESSAGE..."></textarea>
+            </div>
+
+            <div>
+              <label for="output-text" class="mb-2 block font-pixel text-[10px]">
+                02 / OUTPUT TEXT
+              </label>
+              <textarea id="output-text"
+                class="pixel-field min-h-28 w-full resize-y bg-[#DFF7EC] p-3 font-mono text-sm leading-6 outline-none placeholder:text-[#758C82] sm:min-h-32"
+                placeholder="RESULT WILL APPEAR HERE..." readonly></textarea>
+            </div>
+          </div>
+
+          <aside class="border-t-4 border-[#182033] bg-[#E9E2CF] p-4 md:border-t-0">
+            <div class="mb-4">
+              <label for="cipher-key" class="mb-2 block font-pixel text-[10px]">
+                KEY_CODE
+              </label>
+              <input id="cipher-key" type="text"
+                class="pixel-field w-full bg-[#FFFCF3] px-4 py-3 font-mono text-sm font-bold outline-none placeholder:text-[#9DA1A8]"
+                placeholder="ENTER KEY" />
+            </div>
+
+            <div class="grid gap-3">
+              <button id="encrypt-btn" type="button" class="pixel-button bg-[#75F0C6]">
+                <span>ENCRYPT</span>
+                <span aria-hidden="true">+&gt;</span>
+              </button>
+              <button id="decrypt-btn" type="button" class="pixel-button bg-[#7EB6FF]">
+                <span>DECRYPT</span>
+                <span aria-hidden="true">&lt;+</span>
+              </button>
+              <button id="clear-btn" type="button" class="pixel-button mt-2 bg-[#FF8C82]">
+                <span>CLEAR ALL</span>
+                <span aria-hidden="true">XX</span>
+              </button>
+            </div>
+          </aside>
+        </div>
+
+        <footer
+          class="flex flex-col gap-2 border-t-4 border-[#182033] bg-[#182033] px-4 py-3 text-[9px] font-bold uppercase tracking-widest text-[#C8D0E3] sm:flex-row sm:items-center sm:justify-between sm:px-6">
+          <span>Built by Lalo Group</span>
+          <span class="text-[#75F0C6]">Local processing only</span>
+        </footer>
+      </section>
+
+    </div>
+  </main>
+  <script src="logic.js"></script>
+</body>
+
+</html>
